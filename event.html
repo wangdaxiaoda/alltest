@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>event</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <script src="event.js"></script>
+    <script>
+    function start(){
+        alert("start");
+    }
+        var myEvent = new EventTarget();
+        myEvent.addEvents({
+            "start": start,
+            "init": function () {
+                alert("init");
+            }
+        });
+        myEvent.removeEvent("start",start);
+        myEvent.fireEvents(["start", "init"]);
+        // document.onclick = function (e) {
+        //     e = e || window.event;
+        //     var target = e.target || e.srcElement;
+        //     if (target) {
+        //         myEvent.fireEvents(["start", "init"]);
+        //     }
+        // };
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,4 @@
+:root { --color: purple; }
+div { --color: #23; }
+#alert { --color: red; }
+* { color: var(--color); }
