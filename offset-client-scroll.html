@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>offset-client-scroll</title>
+    <style>
+    #testBox{
+        width:300px;
+        height:100px;
+        overflow: scroll;
+    }
+    </style>
+</head>
+
+<body>
+
+    <div id="testBox"><p>21313123122222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222</p>
+    <p>123123</p>
+    <p>123123</p>
+    <p>123123</p>
+    <p>123123</p>
+    <p>123123</p>
+    </div>
+    <button onclick="show()">show different</button>
+    <div><h1>offset,scroll,client的区别</h1>
+    <h3>client指的是可视的高度和宽度</h3>
+    <h3>offset指的是可视+滚动条的宽度（如果存在的话）</h3>
+    <h3>scroll指的是内容的总的宽高（包括被隐藏的部分，但是不包含滚动条）</h3>
+    </div>
+<script>
+function show(){
+    var clientW = document.getElementById("testBox").clientWidth;
+    var clientH = document.getElementById("testBox").clientHeight;
+    var offsetW = document.getElementById("testBox").offsetWidth;
+    var offsetH = document.getElementById("testBox").offsetHeight;
+    var scrollW = document.getElementById("testBox").scrollWidth;
+    var scrollH = document.getElementById("testBox").scrollHeight;
+    alert("cw:"+clientW+";ch:"+clientH+"ow:"+offsetW+";oh:"+offsetH+";sw:"+scrollW+";sh:"+scrollH)
+}
+</script>
+</body>
+
+</html>
