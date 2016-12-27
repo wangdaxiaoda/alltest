@@ -23,6 +23,9 @@ TINY.box = function(){
             ic = c;iu=u;ih=h;ia=a;this.alpha(m,1,80,3);
             if(t){setTimeout(function(){TINY.boc.hide()},1000*t)}
         },
+        /**
+         * u作为判断是否是链接（其他的html页面等）
+         */
         fill:function(c,u,w,h,a){
             if(u){
                 p.style.backgroundImage='';
@@ -38,6 +41,7 @@ TINY.box = function(){
         psh:function(c,w,h,a){
             if(a){
                 if(!w||!h){
+                    //给w，h赋值
                     var x = p.style.width,y=p.style.height;b.innerHTML=c;
                     p.style.width=w?w+'px':'';p.style.height=h?h+'px':'';
                     b.style.display='';
@@ -95,6 +99,9 @@ TINY.box = function(){
                 e.style.opacity=n/100;e.style.filter='alpha(opacity='+n+')';
             }
         },
+        /**
+         * 去除滚动条
+         */
         size:function(e,w,h,s){
             e=typeof e=="object"?e:T$(e);clearInterval(e.si);
             var ow = e.offsetWidth,oh=e.offsetHeight;
